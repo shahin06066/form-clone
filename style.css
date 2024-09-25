@@ -44,6 +44,11 @@ body {
     margin-left: 40px;
 }
 
+.img-control{
+padding-bottom: 30px;
+}
+
+
 .input {
 margin-top: 20px;
 
@@ -51,6 +56,7 @@ margin-top: 20px;
 
 .input-control{
 }
+
 .input-group{
   display: flex;
   justify-content: center;
@@ -60,7 +66,9 @@ margin-top: 20px;
     background-color: #010097;
     border: none;
     cursor: pointer;
+    padding: 16px;
     padding-left: 10px;
+    /* border: 1px solid white; */
 }
 
 .login{
@@ -71,7 +79,7 @@ margin-top: 20px;
 }
 
 .btn{
-    font-size: 14px;
+    font-size: 12px;
     padding: 15px;
     cursor: pointer;
     text-transform: uppercase;
@@ -82,11 +90,16 @@ margin-top: 20px;
 
 .btn:hover{
     background-color: #6F0000;
+    transition: .3s;
 }
 
 .login a{
-    color: red;
+    color: rgb(160, 12, 12);
     text-decoration: none;
+}
+.login a:hover{
+    opacity: .5;
+    transition: .3s;
 }
 
 .input-group__field{
@@ -101,7 +114,7 @@ color: white;
 
 .input input {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -113,77 +126,79 @@ color: white;
     background-color: #010097;
 }
 
-.input button btn {
-    width: 100%;
-    padding: 12px;
+.input-group .btn{
+    /* width: 100%; */
+    padding: 17px;
     background-color: #A20000;
-    color: white;
+    color: #ffd500;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
 }
 
+.input-group .btn:hover{
+    background-color: #6F0000;
+}
+
 .input button:hover {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid black;
-    transition: 0.3s;
+   
 }
 
 /* Responsive for all divices */
 /* Large Desktops (1440px and above) */
 @media (min-width: 1440px) {
-    /* .container {
-        max-width: 600px;
-    } */
+    .container {
+        max-width: 100%;
+    } 
 
     .input-group__field {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .btn {
-        font-size: 18px;
-        padding: 12px 25px;
+        font-size: 16px;
+        /* padding: 12px 25px; */
     }
 }
 
 /* Desktops and Laptops (1024px and above) */
 @media (min-width: 1024px) and (max-width: 1439px) {
-    /* .container {
-        max-width: 500px;
-    } */
+
+    .container {
+        max-width: 100%;
+    } 
 
     .input-group__field {
         font-size: 16px;
     }
 
     .btn {
-        font-size: 16px;
-        padding: 10px 20px;
+        font-size: 13px; 
+        /* padding: 10px 20px; */
     }
 }
 
 /* Tablets (768px to 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-    /* .container {
-        max-width: 600px;
-    } */
+
+    .container {
+        max-width: 100%;
+    } 
 
     .input-group__field {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .btn {
-        font-size: 15px;
-        padding: 10px 18px;
+        font-size: 13px;
+        /* padding: 10px 18px; */
     }
 }
 
 /* iPads and smaller tablets (601px to 767px) */
 @media (min-width: 601px) and (max-width: 767px) {
     .container {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .input-group__field {
@@ -191,24 +206,24 @@ color: white;
     }
 
     .btn {
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 13px;
+        /* padding: 8px 16px; */
     }
 }
 
 /* Mobile phones (up to 600px) */
 @media (max-width: 600px) {
     .container {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .input-group__field {
-        font-size: 12px;
-        padding: 8px;
+        font-size: 14px;
+        /* padding: 8px; */
     }
 
     .btn {
-        font-size: 12px;
-        padding: 8px 12px;
+        font-size: 13px;
+        /* padding: 8px 12px; */
     }
 }
