@@ -15,6 +15,11 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #000;
+    .courier-prime-regular {
+        font-family: "Courier Prime", monospace;
+        font-weight: 400;
+        font-style: normal;
+      }
 }
 
 .container {
@@ -72,15 +77,16 @@ margin-top: 20px;
 }
 
 .login{
-    padding-top: 30px;
+    padding-top: 40px;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
 .btn{
+    margin-top: 1px;
     font-size: 12px;
-    padding: 15px;
+    padding: 17px;
     cursor: pointer;
     text-transform: uppercase;
     background-color: #a20000;
@@ -98,6 +104,10 @@ margin-top: 20px;
     text-decoration: none;
 }
 .login a:hover{
+    opacity: .5;
+    transition: .3s;
+}
+.icon:hover{
     opacity: .5;
     transition: .3s;
 }
