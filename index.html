@@ -1,50 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-<div class="container">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<div class="form" id="loginForm">
+  <!-- internal css code starts from here -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <div class="img-control">
-        <img src="./images/password-page-background.jpg" alt="">
+    body,
+    html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      .courier-prime-regular {
+        font-family: "Courier Prime", monospace;
+        font-weight: 400;
+        font-style: normal;
+      }
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .form {
+      background-color: black;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .img-control img {
+      max-width: 100%;
+      border-radius: 10px;
+      align-items: center;
+      margin-left: 40px;
+    }
+
+    .img-control {
+      padding-bottom: 30px;
+    }
+
+    .input {
+      margin-top: 20px;
+    }
+
+    .input-control {
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: center;
+    }
+
+    .input-group #Email {
+      background-color: #010097;
+      border: none;
+      cursor: pointer;
+      padding: 16px;
+      padding-left: 10px;
+      /* border: 1px solid white; */
+    }
+
+    .login {
+      padding-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn {
+      margin-top: 1px;
+      font-size: 12px;
+      padding: 17px;
+      cursor: pointer;
+      text-transform: uppercase;
+      background-color: #a20000;
+      color: #ffd500;
+      border: none;
+    }
+
+    .btn:hover {
+      background-color: #6f0000;
+      transition: 0.3s;
+    }
+
+    .login a {
+      color: rgb(160, 12, 12);
+      text-decoration: none;
+    }
+    .login a:hover {
+      opacity: 0.5;
+      transition: 0.3s;
+    }
+    .icon:hover {
+      opacity: 0.5;
+      transition: 0.3s;
+    }
+
+    .input-group__field {
+      font-size: 16px;
+      color: white;
+    }
+
+    .icon-lock {
+      width: 100%;
+      height: 20px;
+    }
+
+    .input input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .input-style {
+      background-color: #010097;
+    }
+
+    .input-group .btn {
+      /* width: 100%; */
+      padding: 17px;
+      background-color: #a20000;
+      color: #ffd500;
+      border: none;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .input-group .btn:hover {
+      background-color: #6f0000;
+    }
+
+    .input button:hover {
+    }
+
+    /* Responsive for all divices */
+    /* Large Desktops (1440px and above) */
+    @media (min-width: 1440px) {
+      .container {
+        max-width: 100%;
+      }
+
+      .input-group__field {
+        font-size: 16px;
+      }
+
+      .btn {
+        font-size: 16px;
+        /* padding: 12px 25px; */
+      }
+    }
+
+    /* Desktops and Laptops (1024px and above) */
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      .container {
+        max-width: 100%;
+      }
+
+      .input-group__field {
+        font-size: 16px;
+      }
+
+      .btn {
+        font-size: 13px;
+      }
+    }
+
+    /* Tablets (768px to 1023px) */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .container {
+        max-width: 100%;
+      }
+
+      .input-group__field {
+        font-size: 16px;
+      }
+
+      .btn {
+        font-size: 13px;
+      }
+    }
+
+    /* iPads and smaller tablets (601px to 767px) */
+    @media (min-width: 601px) and (max-width: 767px) {
+      .container {
+        max-width: 100%;
+      }
+
+      .input-group__field {
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 13px;
+      }
+    }
+
+    /* Mobile phones (up to 600px) */
+    @media (max-width: 600px) {
+      .container {
+        max-width: 100%;
+      }
+
+      .input-group__field {
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 13px;
+      }
+    }
+
+    /* Small Mobile phones (up to 400px) */
+    @media (max-width: 400px) {
+      .container {
+        max-width: 100%;
+      }
+
+      .input-group__field {
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 13px;
+      }
+      .img-control img {
+        align-items: center;
+        margin-left: 22px;
+      }
+    }
+  </style>
+  <!-- internal css code ends from here -->
+  <body>
+    <div class="container">
+      <div class="form" id="loginForm">
+        <div class="img-control">
+          <img src="./images/password-page-background.jpg" alt="" />
+        </div>
+
+        <div class="input-group">
+          <label for="Email" class="label--hidden">Email</label>
+          <input
+            type="email"
+            name="contact[email]"
+            id="Email"
+            placeholder="Email"
+            required
+            class="input-group__field"
+          />
+          <div class="input-group__btn">
+            <button type="submit" class="btn">Submit</button>
+          </div>
+        </div>
+
+        <div class="login">
+          <div>
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              role="presentation"
+              class="icon icon-lock"
+              viewBox="0 0 17 20"
+            >
+              <path
+                fill="#FFF"
+                d="M15.725 8.333H15.3V6.875C15.3 3.02 12.313 0 8.5 0 4.687 0 1.7 3.02 1.7 6.875v1.458h-.425C.571 8.333 0 8.893 0 9.583v9.167C0 19.44.571 20 1.275 20h14.45c.704 0 1.275-.56 1.275-1.25V9.583c0-.69-.571-1.25-1.275-1.25zM4.25 6.875C4.25 4.381 6.077 2.5 8.5 2.5s4.25 1.88 4.25 4.375v1.458h-8.5V6.875zm5.95 8.142c0 .91-.754 1.65-1.683 1.65h-.034c-.93 0-1.683-.74-1.683-1.65v-1.7c0-.911.754-1.65 1.683-1.65h.034c.93 0 1.683.739 1.683 1.65v1.7z"
+              ></path>
+            </svg>
+          </div>
+
+          <div style="margin-top: 3px">
+            <a href="./doubleindex.html" class="password-login-toggle"
+              >Password</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
- 
- <div class="input-group">
-    <label for="Email" class="label--hidden">Email</label>
-    <input type="email" name="contact[email]" id="Email" placeholder="Email" required class="input-group__field">
-    <div class="input-group__btn">
-      <button type="submit" class="btn">
-        Submit
-      </button>
-    </div>
-  </div>
 
-<div class="login">
-   
-  <div>
-    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-lock" viewBox="0 0 17 20"><path fill="#FFF" d="M15.725 8.333H15.3V6.875C15.3 3.02 12.313 0 8.5 0 4.687 0 1.7 3.02 1.7 6.875v1.458h-.425C.571 8.333 0 8.893 0 9.583v9.167C0 19.44.571 20 1.275 20h14.45c.704 0 1.275-.56 1.275-1.25V9.583c0-.69-.571-1.25-1.275-1.25zM4.25 6.875C4.25 4.381 6.077 2.5 8.5 2.5s4.25 1.88 4.25 4.375v1.458h-8.5V6.875zm5.95 8.142c0 .91-.754 1.65-1.683 1.65h-.034c-.93 0-1.683-.74-1.683-1.65v-1.7c0-.911.754-1.65 1.683-1.65h.034c.93 0 1.683.739 1.683 1.65v1.7z"></path></svg>
-  </div>
-
-  <div style="margin-top: 3px;">
-    <a href="./doubleindex.html" class="password-login-toggle">Password</a>
- </div>
-    
-</div>
-
-</div>
-</div>
-
-<script src="./app.js"></script>
-</body>
+    <script src="./app.js"></script>
+  </body>
 </html>

@@ -1,71 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        /* Simple styles for notification message */
-        .notification {
-            color: #ffd500; /* Notification color */
-            margin-top: 10px; /* Space above the message */
-            font-size: 16px; /* Font size for the message */
-        }
+      /* Simple styles for notification message */
+      .notification {
+        color: #ffd500; /* Notification color */
+        margin-top: 10px; /* Space above the message */
+        font-size: 16px; /* Font size for the message */
+      }
     </style>
-</head>
-<body style="background-color: #fff;">
-    
-<div class="container">
-
-    <div style="background-color: #FFFFFF !important; box-shadow: none;" class="form" id="loginForm">
+  </head>
+  <body style="background-color: #fff">
+    <div class="container">
+      <div
+        style="background-color: #ffffff !important; box-shadow: none"
+        class="form"
+        id="loginForm"
+      >
         <div>
-            <p style="color: #ffd500; padding-bottom: 30px; font-size: 18px;">- Password -</p>
+          <p style="color: #ffd500; padding-bottom: 30px; font-size: 18px">
+            - Password -
+          </p>
         </div>
         <div class="input-group">
-            <label for="Password" class="label--hidden"></label>
-            <input style="padding-left: 10px; font-size: 15px; font-weight: 400;" type="password" name="contact[password]" id="Password" placeholder="Your Password" required>
-            <div class="input-group__btn">
-                <button type="submit" class="btn">ENTER</button>
-            </div>
+          <label for="Password" class="label--hidden"></label>
+          <input
+            style="padding-left: 10px; font-size: 16px; font-weight: 400"
+            type="password"
+            name="contact[password]"
+            id="Password"
+            placeholder="Your Password"
+            required
+          />
+          <div class="input-group__btn">
+            <button type="submit" class="btn">ENTER</button>
+          </div>
         </div>
 
         <div class="login">
-            <div>
-                <p style="color: #ffd500;">Are you a store owner?</p>
-            </div>
-            <div>
-                <a href="https://admin.shopify.com/login?errorHint=no_identity_session" style="color: #a20000; text-decoration: underline;" class="password-login-toggle">Log in here</a>
-            </div>
+          <div>
+            <p style="color: #ffd500">Are you a store owner?</p>
+          </div>
+          <div>
+            <a
+              href="https://admin.shopify.com/login?errorHint=no_identity_session"
+              style="color: #a20000; text-decoration: underline"
+              class="password-login-toggle"
+              >Log in here</a
+            >
+          </div>
         </div>
 
         <!-- Notification message element -->
-        <div class="notification" id="notificationMessage" style="display: none;"></div>
+        <div
+          class="notification"
+          id="notificationMessage"
+          style="display: none"
+        ></div>
+      </div>
     </div>
 
-</div>
+    <!-- JavaScript code to display notification on form submit -->
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting
 
-<!-- JavaScript code to display notification on form submit -->
-<script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting
+          const password = document.getElementById("Password").value; // Get password value
+          const notificationMessage = document.getElementById(
+            "notificationMessage"
+          ); // Get notification element
 
-        const password = document.getElementById('Password').value; // Get password value
-        const notificationMessage = document.getElementById('notificationMessage'); // Get notification element
-
-        // Check if password is provided
-        if (password.length < 6) {
-            notificationMessage.textContent = 'Password must be at least 6 characters long.'; // Set error message
-            notificationMessage.style.display = 'block'; // Show message
-        } else {
-            notificationMessage.textContent = 'Login Successful.'; // Set success message
-            notificationMessage.style.display = 'block'; // Show message
-        }
-    });
-</script>
-</body>
+          // Check if password is provided
+          if (password.length < 6) {
+            notificationMessage.textContent =
+              "Password must be at least 6 characters long."; // Set error message
+            notificationMessage.style.display = "block"; // Show message
+          } else {
+            notificationMessage.textContent = "Login Successful."; // Set success message
+            notificationMessage.style.display = "block"; // Show message
+          }
+        });
+    </script>
+  </body>
 </html>
